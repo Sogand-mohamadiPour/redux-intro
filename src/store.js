@@ -49,4 +49,6 @@ store.dispatch({
         { amount: 1000, purpose: 'buy a car' }
 });
 console.log(store.getState());
-// store.dispatch({ type: 'account/payLoan' });
+
+store.dispatch({ type: 'account/payLoan' });
+console.log(store.getState());
