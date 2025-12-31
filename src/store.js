@@ -1,12 +1,19 @@
+import { type } from '@testing-library/user-event/dist/type';
 import { createStore } from 'redux';
 
-const initialState = {
+const initialStateAccount = {
     balance: 0,
     loan: 0,
     loanPurpose: '',
 };
 
-function reducer(state = initialState, action) {
+const initialStateCustomer = {
+    fullName: '',
+    nationalID: '',
+    createdAT: '',
+};
+
+function reducer(state = initialStateAccount, action) {
     switch (action.type) {
         case 'account/deposit':
             return {
@@ -76,3 +83,18 @@ store.dispatch(requestLoan(1000, 'buy a cheap car'));
 store.dispatch(payLoan());
 
 console.log(store.getState());
+
+// ////////////////////////////////////////////
+function createCustomer(fullName, nationalID) {
+    return {
+        type: 'customer/createCustomer',
+        payload: { fullName, nationalID, createdAT: new Date().toISOString() },
+    }
+};
+
+function updateName(fullName) {
+    return {
+        type: 'customer/updateName',
+        payload: fullName,
+    }
+};
