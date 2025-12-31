@@ -1,4 +1,3 @@
-import { type } from '@testing-library/user-event/dist/type';
 import { combineReducers, createStore } from 'redux';
 
 const initialStateAccount = {
@@ -122,3 +121,9 @@ function updateName(fullName) {
         payload: fullName,
     }
 };
+
+store.dispatch(createCustomer('John Doe', '1234567890'));
+store.dispatch(updateName('Jane Doe'));
+console.log(store.getState());
+store.dispatch(deposit(250));
+console.log(store.getState());
