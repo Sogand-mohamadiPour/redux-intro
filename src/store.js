@@ -72,9 +72,7 @@ function payLoan() {
 
 store.dispatch(deposit(500));
 store.dispatch(withdraw(200));
-console.log(store.getState());
-
 store.dispatch(requestLoan(1000, 'buy a cheap car'));
-console.log(store.getState());
 store.dispatch(payLoan());
+
 console.log(store.getState());
