@@ -34,9 +34,9 @@ const accountSlice = createSlice({
             }
         },
         payLoan(state, action) {
-            state.loan = 0;
-            state.loanPurpose = '';
             state.balance -= state.loan;
+            state.loanPurpose = '';
+            state.loan = 0;
         }
     }
 });
