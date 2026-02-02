@@ -1,12 +1,8 @@
-// import { createSlice } from '@reduxjs/toolkit';
-
 const initialStateCustomer = {
     fullName: '',
     nationalID: '',
     createdAT: '',
 };
-
-// const customerSlice = createSlice({
 //     name: 'customer',
 //     initialState,
 //     reducers: {
